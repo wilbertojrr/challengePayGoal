@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "615bc004-13d1-46a9-b6a5-f6a82cd5a74d",
+		"name": "PayGoalApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21423025"
+	},
+	"item": [
+		{
+			"name": "Create product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"CocaCola\",\n    \"description\": \"2 lts\",\n    \"price\": 400,\n    \"quantity\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Get by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/products/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/products/name/CocaCola3"
+			},
+			"response": []
+		},
+		{
+			"name": "SortByPrice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products/sortedPrice?sorted=Desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"sortedPrice"
+					],
+					"query": [
+						{
+							"key": "sorted",
+							"value": "Desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"CocaCola\",\n    \"description\": \"3 lts\",\n    \"price\": 4,\n    \"quantity\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/products/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/products/2"
+			},
+			"response": []
+		}
+	]
+}
